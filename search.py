@@ -6,7 +6,7 @@ data1, data2, data3, data4 = "", "", "", ""
 row=None
 
 # 메인 코드
-conn = pymysql.connect(host='127.0.0.1', user='root', password='1234', db='memberDB', charset='utf8')
+conn = pymysql.connect( )
 cur = conn.cursor()
 
 cur.execute("SELECT * FROM userTable")
@@ -16,12 +16,11 @@ print("----------------------------------------------------")
 
 while (True) :
     row = cur.fetchone()
-    if row== None :
-        break
+    
     data1 = row[0]
     data2 = row[1]
     data3 = row[2]
     data4 = row[3]
-    print("%10s   %10s   %15s   %5d" % (data1, data2, data3, data4))
+    print("%10s   %10s   %15s   %5d" % ( ))
 
 conn.close()
