@@ -9,12 +9,12 @@ def insertData() :
     data1, data2, data3, data4 = "", "", "", ""
     sql=""
 
-    conn = pymysql.connect(host='127.0.0.1', user='root', password='1234', db='sqlDB', charset='utf8')
+    conn = pymysql.connect(host='127.0.0.1', user='root', password='1234', db='memberDB', charset='utf8')
     cur = conn.cursor()
 
     data1 = edt1.get();    data2 = edt2.get();    data3 = edt3.get();    data4 = edt4.get()
     try :
-        sql = "INSERT INTO usertbl VALUES('" + data1 + "','" + data2 + "','" + data3 + "'," + data4 + ")"
+        sql = "INSERT INTO usertable VALUES('" + data1 + "','" + data2 + "','" + data3 + "'," + data4 + ")"
         cur.execute(sql)
     except :
         messagebox.showerror('오류', '데이터 입력 오류가 발생함')
@@ -25,7 +25,7 @@ def insertData() :
 
 def selectData() :
     strData1, strData2, strData3, strData4  = [], [], [], []
-    conn = pymysql.connect(host='127.0.0.1', user='root', password='1234', db='hanbitDB', charset='utf8')
+    conn = pymysql.connect(host='127.0.0.1', user='root', password='1234', db='memberDB', charset='utf8')
     cur = conn.cursor()
     cur.execute("SELECT * FROM userTable")
     strData1.append("사용자ID");      strData2.append("사용자이름")
